@@ -1,0 +1,128 @@
+.tabs-section
+{
+    overflow      : hidden;
+    display       : flex;
+    flex-direction: column;
+}
+
+
+.tabs-section .image-container
+{
+    width  : 46rem;
+    height : 30rem;
+    z-index: var(--z-negative);
+}
+
+.tabs-section :is(.image-panel, .panel)
+{
+    transition: opacity 750ms;
+}
+
+.tabs-section :is(.image-panel, .panel):not(.is-active)
+{
+    position      : absolute;
+    top           : 0;
+    left          : 50%;
+    transform     : translateX(-50%);
+    opacity       : 0;
+    pointer-events: none;
+}
+
+.tabs-section :is(.image-panel, .panel).is-active
+{
+    position: relative;
+    z-index : var(--z-normal);
+}
+
+.tabs-section .tabs-container
+{
+    display : flex;
+    overflow: auto;
+    margin  : -7.5rem 2rem 2rem;
+}
+
+.tabs-section .tabs-container::-webkit-scrollbar
+{
+    display: none;
+}
+
+.tabs-section .tab
+{
+    padding      : 0.5rem 1.75rem 0.75rem;
+    border-bottom: 2px solid var(--text-color-alt);
+    color        : var(--text-color-alt);
+    font-size    : 1.25rem;
+    font-family  : var(--display-font);
+    font-weight  : var(--semi-bold-font);
+    white-space  : nowrap;
+}
+
+.tabs-section .tab.is-active
+{
+    border-color: var(--text-color);
+}
+
+.tabs-section :is(.tab.is-active, .tab:hover)
+{
+    color: var(--text-color);
+}
+
+
+.tabs-section .panel
+{
+    width: 100%;
+    height: 16rem;
+    max-width: 21rem;
+    margin-inline: auto;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: var(--semi-bold-font);
+    line-height: 1.4;
+}
+
+@media screen and (min-width : 735px)
+{
+    .tabs-section .image-container
+    {
+        /* margin-top: -7rem; */
+        width : 60rem;
+        height: 65rem;
+    }
+
+    .tabs-section .image-panel
+    {
+        width     : 100%;
+        height    : 100%;
+        object-fit: cover;
+    }
+
+    .tabs-section .tabs-container
+    {
+        margin: -11rem auto 2.5rem;
+    }
+
+    .tabs-section .panel
+    {
+        max-width: 36rem;
+        height   : 9rem;
+    }
+}
+
+@media screen and (min-width : 1024px)
+{
+    .tabs-section .image-container
+    {
+        width : 156rem;
+        height: 92rem;
+    }
+
+    .tabs-section .tabs-container
+    {
+        margin-top: -21rem;
+    }
+
+    .tabs-section .panel
+    {
+        height: 13rem;
+    }
+}

@@ -1,0 +1,45 @@
+.feature-grid
+{
+    background-color: var(--bg-color-alt);
+}
+
+.feature-grid .container
+{
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: center;
+    gap            : 1rem;
+    padding-block  : 4rem;
+    max-width      : 75rem;
+}
+
+.feature-item
+{
+    display       : flex;
+    flex-direction: column;
+    flex-basis    : 50%;
+    max-width     : 16rem;
+    text-align    : center;
+}
+
+.feature-item .icon
+{
+    font-size    : 4rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature-item .title
+{
+    margin-bottom: 0.5rem;
+}
+
+.feature-item .description
+{
+    line-height  : 1.4;
+    margin-bottom: 1rem;
+}
+
+.feature-item :is(.description, .link)
+{
+    font-size: .875rem;
+}
